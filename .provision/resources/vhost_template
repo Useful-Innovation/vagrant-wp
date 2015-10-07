@@ -1,0 +1,14 @@
+<Directory /home/vagrant/code/__VHOSTNAME__/>
+    Options Indexes FollowSymLinks
+    AllowOverride All
+    Require all granted
+</Directory>
+
+<VirtualHost *:80>
+    DocumentRoot /home/vagrant/code/__VHOSTNAME__
+    ServerName __VHOSTNAME__.dev
+    ServerAlias www.__VHOSTNAME__.dev
+
+    ErrorLog /home/vagrant/code/.logs/__VHOSTNAME__-ERROR.log
+    CustomLog /home/vagrant/code/.logs/__VHOSTNAME__-ACCESS.log combined
+</VirtualHost>
