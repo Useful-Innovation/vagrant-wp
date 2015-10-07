@@ -13,7 +13,7 @@ mkdir -p ~/code/.logs
 
 PATH=~/bin:$PATH
 
-ln -sf /usr/local/bin/composer ~/bin/composer # Servant expects it to be there
+# ln -sf /usr/local/bin/composer ~/bin/composer # Servant expects it to be there
 
 # Include our bash scripts
 grep -q -F 'source ~/code/.provision/resources/bash' ~/.bashrc || echo 'source ~/code/.provision/resources/bash' >> ~/.bashrc
@@ -31,23 +31,23 @@ composer -q self-update
 echo "${LOGTITLE} Add github RSA key..."
 ssh-keyscan github.com >> ~/.ssh/known_hosts
 
-echo "${LOGTITLE} Setting up GoBrave Tools..."
-cd ~/tools
-if ! [ -d ./gobrave-tools ]; then
-    git clone git@github.com:Useful-Innovation/gobrave-tools.git
-    cd gobrave-tools/Servant
-    composer install  -qn --no-progress
-fi
+# echo "${LOGTITLE} Setting up GoBrave Tools..."
+# cd ~/tools
+# if ! [ -d ./gobrave-tools ]; then
+#     git clone git@github.com:Useful-Innovation/gobrave-tools.git
+#     cd gobrave-tools/Servant
+#     composer install  -qn --no-progress
+# fi
 
-ln -sf ~/tools/gobrave-tools/Servant/index.php ~/bin/servant
+# ln -sf ~/tools/gobrave-tools/Servant/index.php ~/bin/servant
 
-cd ~/tools
-if ! [ -d ./server ]; then
-    git clone git@github.com:Useful-Innovation/server.git
-fi
+# cd ~/tools
+# if ! [ -d ./server ]; then
+#     git clone git@github.com:Useful-Innovation/server.git
+# fi
 
 
-echo "${LOGTITLE} Setting up Servant..."
-touch ~/.ssh/config
-servant server:set_path ~/tools/server/servers/
-servant server:set_config ~/.ssh/config
+# echo "${LOGTITLE} Setting up Servant..."
+# touch ~/.ssh/config
+# servant server:set_path ~/tools/server/servers/
+# servant server:set_config ~/.ssh/config

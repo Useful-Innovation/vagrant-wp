@@ -35,6 +35,7 @@ sudo apt-get install -yqq nodejs
 npm install -g grunt-cli --silent
 npm install -g bower --silent
 
-# Install composer
+
+echo "${LOGTITLE} Install composer"
 curl -sS https://getcomposer.org/installer | php
 mv composer.phar /usr/local/bin/composer

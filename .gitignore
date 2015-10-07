@@ -2,4 +2,4 @@
 /*/
 !.provision/
 !.gitignore
-!.Vagrantfile
+!Vagrantfile

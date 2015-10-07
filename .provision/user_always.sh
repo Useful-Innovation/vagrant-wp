@@ -5,12 +5,12 @@ echo "${LOGTITLE}"
 
 # source /home/vagrant/code/.provision/config
 
-echo "${LOGTITLE} Updating Servant..."
+# echo "${LOGTITLE} Updating Servant..."
 
-cd ~/tools/gobrave-tools
-git pull
+# cd ~/tools/gobrave-tools
+# git pull
 
-cd ~/tools/server
-git pull
+# cd ~/tools/server
+# git pull
 
-servant server:update
+# servant server:update
