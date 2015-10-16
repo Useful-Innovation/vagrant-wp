@@ -1,5 +1,4 @@
 /*
 /*/
-!.provision/
+!.vagrant-config/
 !.gitignore
-!Vagrantfile

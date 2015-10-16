@@ -1,4 +1,4 @@
-<Directory /home/vagrant/code/__VHOSTNAME__/>
+<Directory /home/vagrant/code/__VHOSTNAME__>
     Options Indexes FollowSymLinks
     AllowOverride All
     Require all granted
@@ -9,6 +9,6 @@
     ServerName __VHOSTNAME__.dev
     ServerAlias www.__VHOSTNAME__.dev
 
-    ErrorLog /home/vagrant/code/.logs/__VHOSTNAME__-ERROR.log
-    CustomLog /home/vagrant/code/.logs/__VHOSTNAME__-ACCESS.log combined
+    ErrorLog /home/vagrant/logs/__VHOSTNAME__-ERROR.log
+    CustomLog /home/vagrant/logs/__VHOSTNAME__-ACCESS.log combined
 </VirtualHost>

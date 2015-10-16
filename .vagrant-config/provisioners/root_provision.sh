@@ -1,9 +1,9 @@
 #!/bin/bash
+cd /home/vagrant/code/
+source .vagrant-config/config
 
 LOGTITLE="----- Provisioning [root:provision]"
 echo "${LOGTITLE}"
-
-source /home/vagrant/code/.provision/config
 
 apt-get install -yqq debconf-utils
 
@@ -18,10 +18,17 @@ sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password passwor
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password root'
 
 apt-get install -yqq \
-    apache2=${INSTALL_APACHE_VERSION} \
-    php5=${INSTALL_PHP_VERSION} \
-    mysql-server=${INSTALL_MYSQL_VERSION} \
+    apache2=${VAGRANT_APACHE_VERSION} \
+    php5=${VAGRANT_PHP_VERSION} \
+    mysql-server=${VAGRANT_MYSQL_VERSION} \
     php5-mysql \
+    php5-curl \
+    php5-xdebug \
+    php5-gd \
+
+# Set up xdebug
+PHP_INI=/etc/php5/apache2/php.ini
+grep -q -F 'zend_extension=xdebug.so' $PHP_INI || echo -e '\n\nzend_extension=xdebug.so' >> $PHP_INI
 
 a2enmod rewrite
 
