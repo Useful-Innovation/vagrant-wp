@@ -1,6 +1,6 @@
 #!/bin/bash
 cd /home/vagrant/code/
-source .vagrant-config/config
+source .vagrant/config/config
 
 LOGTITLE="----- Provisioning [user:provision]"
 echo "${LOGTITLE}"
@@ -12,7 +12,7 @@ mkdir -p ~/bin
 mkdir -p ~/logs
 
 # Include our bash scripts
-grep -q -F 'source ~/code/.vagrant-config/resources/bash' ~/.bashrc || echo 'source ~/code/.vagrant-config/resources/bash' >> ~/.bashrc
+grep -q -F 'source ~/code/.vagrant/config/resources/bash' ~/.bashrc || echo 'source ~/code/.vagrant/config/resources/bash' >> ~/.bashrc
 
 echo "${LOGTITLE} Installing WP-CLI..."
 cd ~/bin

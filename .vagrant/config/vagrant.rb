@@ -14,7 +14,7 @@ dirs = Dir.glob('*').map {|f| if (File.directory? f) then f+'.dev' end} - [nil]
 dirs.each do |vh| vhosts << vh << 'www.' + vh end
 
 # Create bash file with project variables
-File.open("./.vagrant-config/config", 'w+') do |f|
+File.open("./.vagrant/config/config", 'w+') do |f|
   $project.each do |key, value|
     f.write("VAGRANT_" + key.upcase + "=" + value + "\n")
   end
@@ -49,24 +49,24 @@ Vagrant.configure(2) do |config|
   # As root, on explicit provision
   config.vm.provision "shell",
     name: "root_provision",
-    path: "./.vagrant-config/provisioners/root_provision.sh"
+    path: "./.vagrant/config/provisioners/root_provision.sh"
 
   # As root, always
   config.vm.provision "shell",
     name: "root_always",
-    path: "./.vagrant-config/provisioners/root_always.sh",
+    path: "./.vagrant/config/provisioners/root_always.sh",
     run:  "always"
 
   # As user, on explicit provision
   config.vm.provision "shell",
     name: "user_provision",
-    path: "./.vagrant-config/provisioners/user_provision.sh",
+    path: "./.vagrant/config/provisioners/user_provision.sh",
     privileged: false
 
   # As user, always
   config.vm.provision "shell",
     name: "user_always",
-    path: "./.vagrant-config/provisioners/user_always.sh",
+    path: "./.vagrant/config/provisioners/user_always.sh",
     run:  "always",
     privileged: false
 

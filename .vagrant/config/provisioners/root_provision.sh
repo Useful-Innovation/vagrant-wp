@@ -1,6 +1,6 @@
 #!/bin/bash
 cd /home/vagrant/code/
-source .vagrant-config/config
+source .vagrant/config/config
 
 LOGTITLE="----- Provisioning [root:provision]"
 echo "${LOGTITLE}"

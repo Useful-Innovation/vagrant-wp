@@ -8,4 +8,4 @@ $project = {
   "mysql_version"   => "5.5.*",
 }
 
-require("./.vagrant-config/vagrant.rb")
+require("./.vagrant/config/vagrant.rb")
