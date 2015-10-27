@@ -9,7 +9,6 @@ echo "${LOGTITLE}"
 
 echo "${LOGTITLE} Setting up paths..."
 mkdir -p ~/bin
-mkdir -p ~/logs
 
 # Include our bash scripts
 grep -q -F 'source ~/code/.vagrant/config/resources/bash' ~/.bashrc || echo 'source ~/code/.vagrant/config/resources/bash' >> ~/.bashrc

@@ -1,6 +1,4 @@
-/*
-/*/
-!.vagrant
+*
+!.vagrant/config
 !Vagrantfile
-.vagrant/machines
 !.gitignore

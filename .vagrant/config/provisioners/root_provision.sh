@@ -17,6 +17,7 @@ export DEBIAN_FRONTEND=noninteractive
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password password root'
 sudo debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password root'
 
+apt-get update
 apt-get install -yqq \
     apache2=${VAGRANT_APACHE_VERSION} \
     php5=${VAGRANT_PHP_VERSION} \
