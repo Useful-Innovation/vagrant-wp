@@ -36,8 +36,9 @@ Vagrant.configure(2) do |config|
   # Push dirs as aliases to hostsupdater
   config.hostsupdater.aliases = vhosts
 
-  config.vm.synced_folder ".", "/home/vagrant/code/"
-    #:mount_options => ["dmode=755", "fmode=755"]
+  config.vm.synced_folder ".", "/home/vagrant/code/",
+    :owner => "vagrant",
+    :group => "www-data"
 
   config.vm.provider "virtualbox" do |vb|
     # Customize the amount of memory on the VM:
